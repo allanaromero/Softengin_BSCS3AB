@@ -7,12 +7,18 @@
                     <div class="mb-5">
                         <center>
                             <h2><b>Employee Management System</b></h2>
+                            <h5>Admin</h5>
                         </center>
                     </div>
-                    <form action="" method="post">
+                    <?php
+                        if ($this->session->flashdata('message')) {
+                            echo '<div class="alert alert-danger">' . $this->session->flashdata("message") . '</div>';
+                        }
+                    ?>
+                    <form action="<?php echo base_url('login/adminvalidation') ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputusername1" class="form-label">Username</label>
-                            <input type="text" name="userName" id="exampleusername1" class="form-control mb-1" aria-describedby="emailHelp" />
+                            <input type="text" name="username" id="exampleusername1" class="form-control mb-1" aria-describedby="emailHelp" />
                         </div>
                         <div class="mb-3">
                             <label for="exampleInewPassword1" class="form-label">Password</label>
@@ -20,14 +26,12 @@
                         </div>
                         <input type="submit" name="action" value="Log In" style="float: right; background-color: #b69d74; border: none; border-radius: 10%; box-shadow: 2px 2px 5px dimgray;" class="px-4 py-2 m-3">
                     </form>
+                    <br><br>
+                    <a href="<?= base_url('login') ?>">
+                        Log In as Employee
+                    </a>
                 </div>
                 <div class="col-lg-3"></div>
             </div>
         </div>
     </section>
-
-
-<!-- #1f2839
-#f5f5ef
-#b69d74 -->
-
