@@ -3,18 +3,9 @@
         <div class="row m-4 justify-content-center">
             <div class="card">
                 <div class="card-front mt-5 ">
-                    <h2 class="text-center">Change Employee Passsword</h2>
+                    <h2 class="text-center">Change Admin Passsword</h2>
                     <hr style="color: #1f2839;">
-                    <form action="<?php echo base_url('employee/changepass') ?>" method="post">
-                        <?php
-                        foreach ($viewemployee->result() as $row) {
-                        ?>
-                            <!-- Hidden Employee ID -->
-                            <input type="text" name="user_id" value="<?php echo $row->user_id; ?>" hidden>
-                            <!-- Hidden Employee ID -->
-                        <?php
-                        }
-                        ?>
+                    <form action="<?php echo base_url('profile/changepass') ?>" method="post">
                         <div class="mx-5 mb-3 mt-5">
                             <label for="exampleInewPassword1" class="form-label">New Password</label>
                             <input type="password" class="form-control" name="password" id="exampleInputPassword1">
