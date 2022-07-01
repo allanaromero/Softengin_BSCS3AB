@@ -1,68 +1,66 @@
- 
-    <div class="section">
-        <div class="container ">
-            <div class="row mt-5 justify-content-center">
-                <div class="card ">
-                    <div class="card-front mt-5 ">
-                        <h1 class="text-center">Add Employee</h1>
-                        <hr style="color: #1f2839;">
-                        
-                        <div class="mx-5 mb-3 mt-5">
-                            <label for="examplefirstname1" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="exampleInputlastname1" aria-describedby="emailHelp">
-
-                        </div>
-                        <div class="mx-5 mb-3">
-                            <label for="examplefirstname1" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="exampleInputlastname1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mx-5 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        
-                        <div class="d-grid gap-2 mt-5 d-md-flex justify-content-md-center">
-                            <button class="btn btn-lg mt-5 " type="button">Add</button>
-                            <button class="btn btn-lg mt-5" type="button">Cancel</button>
-                        </div>
-                    </div>     
-                </div>
-            </div>           
+<div class="py-3 px-5" style="background-color: #1f2839; min-height: 90vh;">
+    <div class="p-4" style="background-color: #f5f5ef; justify-content:center; min-height: 85vh;">
+        <div class="btn-group">
+            <a href="<?= base_url('employee') ?>">
+                <button style="float: right; background-color: #b69d74; border: 5px; box-shadow: 2x 2px 5px dimgray;" class="px-3 py-2 m-1">
+                    Back
+                </button>
+            </a>
         </div>
+        <center>
+            <h1 class="mb-4">Add New Employee</h1>
+        </center>
+        <hr>
+        <form action="<?php echo base_url('employee/addnewemployee') ?>" method="post">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="full_name" placeholder="" value="<?php echo set_value('full_name'); ?>" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="department">Department</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="department" placeholder="" value="<?php echo set_value('department'); ?>" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="name">Email Address</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="email" class="form-control" name="email" placeholder="" value="<?php echo set_value('email'); ?>" required>
+                    <span class="text-danger"><?php echo form_error('email'); ?></span>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="name">Username</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="username" placeholder="" value="<?php echo set_value('username'); ?>" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="name">Password</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="password" placeholder="" value="<?php echo random_string('numeric', 6); ?>" readonly>
+                </div>
+            </div>
+            <br>
+            <div class="card-button" style="width: 100%;">
+                <input type="submit" name="action" id="" value="Submit" style="float: right; background-color: #b69d74; border: none; border-radius: 10%;" class="px-4 py-2 mb-3">
+            </div>
+        </form>
     </div>
-
-    <style>
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    background-color: #1f2839;
-    overflow-x: hidden;
-}
-
-.form-label{
-color: #1f2839;
-}
-.card h1{
-padding: 0 20px;
-font-weight: bold;
-color: #1f2839;
-}
-
-.card {
-position: relative;
-width: 900px;
-max-width: 75%;
-height: 600px;
-background-color: #f5f5ef;
-margin: 50px;
-}
-.btn{
-color: #1f2839;
-background-color: #b69d74;
-
-}
-
-
-
-</style>
+</div>
